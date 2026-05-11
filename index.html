@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>LOGICAR</title>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Shippori+Mincho&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+</html>
+
+<body>
+    <header>
+        <div class="header-wrapper">
+
+            <div class="header-icon-menu">
+                <a href="index.html">
+                    <img class="rogo-Logicar" src="images/rogo-Logicar.svg" width="150px" height="auto" alt="LOGICARのロゴ">
+                </a>
+
+                <div class="hamburger" id="js-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+
+
+                <div class="header-menu">
+                    <ul class="menu">
+                        <li><a href="#car-navi">車を探す</a></li>
+                        <li><a href="#store-navi">店舗を探す</a></li>
+                        <li><a href="#novice-navi">初めての方へ</a></li>
+                    </ul>
+                </div>
+            
+            </div>
+
+       
+            <form method="get" action="#" class="search_container">
+              <input type="text" size="25" placeholder="検索">
+              <input type="submit" value="&#xf002">
+            </form>
+
+            </div>
+
+        </header>
+
+        <div class="fv">
+            <div class="fv-wrapper inner-wrapper">
+
+                <div class="fv-main-text">
+                    <h1>「安い」には理由がある。<br>それ以上に「納得」には根拠がある</h1>
+                </div>
+
+                <div class="fv-button-wrapper">
+                    <button class="fv-button">
+                        <img src="images/fv-icon-1.svg" class="fv-icon" alt="車種" width="40px" height="auto">
+                        <h2>車種<span>から選ぶ</span></h2>
+                    </button>
+                    <button class="fv-button">
+                        <img src="images/fv-icon-2.svg" class="fv-icon" alt="値段" width="40px" height="auto">
+                        <h2>値段<span>から選ぶ</span></h2>
+                    </button>
+                    <button class="fv-button">
+                        <img src="images/fv-icon-3.svg" class="fv-icon" alt="地域" width="40px" height="auto">
+                        <h2>地域<span>から選ぶ</span></h2>
+                    </button>
+                    <button class="fv-button fv-search-btn">
+                        <h1>検索</h1>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <section class="ranking-section inner-wrapper">
+            <h2 class="ranking-title">人気ランキング</h2>
+            <div class="ranking-tabs">
+                <div class="tab-item active">
+                    <button class="tab-btn"onclick="switchTab(event)">総合</button>
+
+                    <div class="ranking-content">
+                        <div class="ranking-card">
+                            <div class="image-box">
+                                <img src="images/foritis-1.png" alt="fortisの写真">
+                                <span class="rank-badge">1</span>
+                            </div>
+                            <p>FORTIS</p>
+                        </div>
+
+                        <div class="ranking-card">
+                            <div class="image-box">
+                                <img src="images/axia.png" alt="axiaの写真">
+                                <span class="rank-badge">2</span>
+                            </div>
+                            <p>AXIA</p>
+                        </div>
+
+                        <div class="ranking-card">
+                            <div class="image-box">
+                                <img src="images/folio-x.png" alt="FOLIO-Xの写真">
+                                <span class="rank-badge">3</span>
+                            </div>
+                            <p>FOLIO-X</p>
+                        </div>
+
+
+                        <div class="ranking-card">
+                            <div class="image-box">
+                                <img src="images/logi-q.png" alt="LOGI-Qの写真">
+                                <span class="rank-badge">4</span>
+                            </div>
+                            <p>LOGI-Q</p>
+                        </div>
+
+                        <div class="ranking-card">
+                            <div class="image-box">
+                                <img src="images/valoris.png" alt="VALORISの写真">
+                                <span class="rank-badge">5</span>
+                            </div>
+                            <p>VALORIS</p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="tab-item">
+                    <button class="tab-btn"onclick="switchTab(event)">車種別</button>
+
+                    <div class="ranking-content">
+                        <div class="ranking-card">
+                            <div class="image-box">
+                                <img src="images/axia.png" alt="axiaの写真">
+                                <span class="rank-badge">1</span>
+                            </div>
+                            <p>AXIA</p>
+                        </div>
+
+                        <div class="ranking-card">
+                            <div class="image-box">
+                                <img src="images/unitas.png" alt="unitasの写真">
+                                <span class="rank-badge">2</span>
+                            </div>
+                            <p>UNITAS</p>
+                        </div>
+
+                        <div class="ranking-card">
+                            <div class="image-box">
+                                <img src="images/valoris.png" alt="valorisの写真">
+                                <span class="rank-badge">3</span>
+                            </div>
+                            <p>VALORIS</p>
+                        </div>
+
+
+                        <div class="ranking-card">
+                            <div class="image-box">
+                                <img src="images/foritis-1.png" alt="fortisの写真">
+                                <span class="rank-badge">4</span>
+                            </div>
+                            <p>FORTIS</p>
+                        </div>
+
+                        <div class="ranking-card">
+                            <div class="image-box">
+                                <img src="images/logi-q.png" alt="logi-qの写真">
+                                <span class="rank-badge">5</span>
+                            </div>
+                            <p>LOGI-Q</p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="tab-item">
+                    <button class="tab-btn"onclick="switchTab(event)">価格別</button>
+
+                    <div class="ranking-content">
+                        <div class="ranking-card">
+                            <div class="image-box">
+                                <img src="images/logi-q.png" alt="logi-qの写真">
+                                <span class="rank-badge">1</span>
+                            </div>
+                            <p>LOGI-Q</p>
+                        </div>
+
+                        <div class="ranking-card">
+                            <div class="image-box">
+                                <img src="images/axia.png" alt="axiaの写真">
+                                <span class="rank-badge">2</span>
+                            </div>
+                            <p>AXIA</p>
+                        </div>
+
+                        <div class="ranking-card">
+                            <div class="image-box">
+                                <img src="images/folio-x.png" alt="FOLIO-Xの写真">
+                                <span class="rank-badge">3</span>
+                            </div>
+                            <p>FOLIO-X</p>
+                        </div>
+
+
+                        <div class="ranking-card">
+                            <div class="image-box">
+                                <img src="images/unitas.png" alt="unitasの写真">
+                                <span class="rank-badge">4</span>
+                            </div>
+                            <p>UNITAS</p>
+                        </div>
+
+                        <div class="ranking-card">
+                            <div class="image-box">
+                                <img src="images/primo.png" alt="primoの写真">
+                                <span class="rank-badge">5</span>
+                            </div>
+                            <p>PRIMO</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="car-search" id="car-navi">
+            <div class="car-search-wrapper .inner-wrapper">
+                <h2 class="car-search-title">車を探す</h2>
+                <div class="car-search-container">
+                    <h2 class="car-seach-subtitle">車種から探す</h2>
+                    <div class="csr-selection-box">
+
+                        <div class="car-list">
+
+                            <div class="car-item">
+                                <div class="car-img">
+                                    <img src="images/foritis-1.png" alt="フォルティス">
+                                    <div class="car-info">
+                                        <p>FORTIS</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="car-item">
+                                <div class="car-img">
+                                    <img src="images/axia.png" alt="アクシア">
+                                    <div class="car-info">
+                                        <p>AXIA</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="car-item">
+                                <div class="car-img">
+                                    <img src="images/folio-x.png" alt="フォリオ-エックス">
+                                    <div class="car-info">
+                                        <p>FOLIO-X</p>
+                                    </div>
+                                </div>
+                            </div>
+                      
+                            <div class="car-item">
+                                <div class="car-img">
+                                    <img src="images/logi-q.png" alt="ロジ-キュー">
+                                    <div class="car-info">
+                                        <p>LOGI-Q</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="car-item">
+                                <div class="car-img">
+                                    <img src="images/valoris.png" alt="ヴォルティス">
+                                    <div class="car-info">
+                                        <p>VALORIS</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="car-item">
+                                <div class="car-img">
+                                    <img src="images/primo.png" alt="プリモ">
+                                    <div class="car-info">
+                                        <p>PRIMO</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="car-item">
+                                <div class="car-img">
+                                    <img src="images/metrica.png" alt="メタリカ">
+                                    <div class="car-info">
+                                        <p>METRICA</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="car-item">
+                                <div class="car-img">
+                                    <img src="images/unitas.png" alt="ユニタス">
+                                    <div class="car-info">
+                                        <p>UNITAS</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                  
+                      
+                        </div> <!--car-listの閉じタグ-->
+                 
+                    </div>
+
+                    <a href="#" class="car-all-link">車種一覧へ</a>
+
+                </div><!--car-search-containerの閉じタグ-->
+
+                <section class="car-search-money">
+                    <h2 class="car-seach-subtitle">価格から探す</h2>
+                    <div class="car-money-wrapper">
+                        <div class="car-money-container">
+                            <h3 class="car-money-title">支払い総額から探す</h3>
+
+                            <div class="car-meney-list">
+
+                                <div class="car-meney-item">
+                                    <a href="#" class="car-meney">50<span>万円以下</span></a>
+                                </div>
+
+                                <div class="car-meney-item">
+                                    <a href="#" class="car-meney">80<span>万円以下</span></a>
+                                </div>
+
+                                <div class="car-meney-item">
+                                    <a href="#" class="car-meney">100<span>万円以下</span></a>
+                                </div>
+
+                                <div class="car-meney-item">
+                                    <a href="#" class="car-meney">150<span>万円以下</span></a>
+                                </div>
+
+                                <div class="car-meney-item">
+                                    <a href="#" class="car-meney">200<span>万円以下</span></a>
+                                </div>
+
+                                <div class="car-meney-item">
+                                    <a href="#" class="car-meney">250<span>万円以下</span></a>
+                                </div>
+
+                                <div class="car-meney-item">
+                                    <a href="#" class="car-meney">300<span>万円以下</span></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="car-money-wrapper-secand">
+                        <div class="car-money-container">
+                            <div class="car-money-sub-title">
+                                <h3>年間維持費から探す</h3>
+                                <p>LOGICARでは、年間走行距離10,000km、ガソリン価格175円/L、<br>
+                                    任意保険（14等級・30歳以上補償）の平均値をベースに算出しています。</p>
+                            </div>
+
+                            <div class="car-meney-list-secand">
+
+                                <div class="car-meney-item">
+                                    <a href="#" class="car-meney">15<span>万円以下</span></a>
+                                </div>
+
+                                <div class="car-meney-item">
+                                    <a href="#" class="car-meney">20<span>万円以下</span></a>
+                                </div>
+
+                                <div class="car-meney-item">
+                                    <a href="#" class="car-meney">25<span>万円以下</span></a>
+                                </div>
+
+                                <div class="car-meney-item">
+                                    <a href="#" class="car-meney">30<span>万円以下</span></a>
+                                </div>
+
+                                <div class="car-meney-item">
+                                    <a href="#" class="car-meney">40<span>万円以下</span></a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                       <div class="money-sub-text">
+                        <p>年間維持費とは＝【自動車税 ＋ 自賠責保険 ＋ 車検（1年分） ＋ 任意保険 ＋ 燃費（年間1万km走行想定）】の合算。の事</p>
+                       </div>
+                  
+                    </div>
+                </section>
+
+            </div>
+        </section>
+
+
+        <section class="review">
+            <div class="review-wrapper.inner-wrapper">
+                <div class="review-container">
+                    <h3 class="review-title">新着レビュー </h3>
+
+                    <div class="review-list">
+
+                        <div class="review-card">
+                            <div class="review-upper">
+                                
+                                <div class="review-left">
+                                    <div class="rev-car-img">
+                                        <img src="images/foritis-1.png" alt="フォルティスの画像">
+                                    </div>
+                                    <div class="rev-uset-info">
+                                        <p class="rev-name">K.Nさん</p>
+                                        <p class="rev-date">26.3.10</p>
+                                    </div>
+                                </div>
+
+                                <div class="review-right">
+                                    <h3 class="rev-car-name">FORTIS</h3>
+                                    <p class="rev-car-text">総合評価</p>
+                                    <div class="rating-row">
+                                        <span class="stars r4"></span>
+                                        <span class="score">4.0</span>
+                                    </div>
+                                    <div class="raring-breakdown">
+                                        <p>内訳： 品質 [4] / 価格 [5] / 透明性 [5] / スピード [4]</p>
+                                    </div>
+                                </div>
+
+                            </div> <!--review-upper"の終わりタグ-->
+
+                            <div class="review-lower">
+                                <div class="review-text">
+                                    <p>提示された支払総額以外に、よくある「謎のオプション費用」が1円もかからなかったことに驚きました。担当者の方が、燃費や税金を考慮した「5年間のトータルコスト」を出してくれたので、妻も納得。少し納車に時間がかかりましたが、その分徹底的に整備してくれたレポートを貰えたので安心です。</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="review-card">
+                            <div class="review-upper">
+                                
+                                <div class="review-left">
+                                    <div class="rev-car-img">
+                                        <img src="images/logi-q.png" alt="ロジ・キューの画像">
+                                    </div>
+                                    <div class="rev-uset-info">
+                                        <p class="rev-name">S.Rさん</p>
+                                        <p class="rev-date">25.12.1</p>
+                                    </div>
+                                </div>
+
+                                <div class="review-right">
+                                    <h3 class="rev-car-name">LOGI-Q</h3>
+                                    <p class="rev-car-text">総合評価</p>
+                                    <div class="rating-row">
+                                        <span class="stars r5"></span>
+                                        <span class="score">5.0</span>
+                                    </div>
+                                    <div class="raring-breakdown">
+                                        <p>内訳： 品質 [5] / 価格 [4] / 透明性 [5] / スピード [5]</p>
+                                    </div>
+                                </div>
+
+                            </div> <!--review-upper"の終わりタグ-->
+
+                            <div class="review-lower">
+                                <div class="review-text">
+                                    <p>オンライン商談で、カメラ越しに「あえて目立たない小さな傷」を先に教えてくれました。メリットだけでなくリスクも説明してくれる姿勢に、LOGICARさんのプロ意識を感じました。保証内容もシステマチックで分かりやすく、万が一の故障リスクを論理的に排除できたのが購入の決め手です。</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="review-card">
+                            <div class="review-upper">
+                                
+                                <div class="review-left">
+                                    <div class="rev-car-img">
+                                        <img src="images/primo.png" alt="プリモの画像">
+                                    </div>
+                                    <div class="rev-uset-info">
+                                        <p class="rev-name">K.Cさん</p>
+                                        <p class="rev-date">25.10.20</p>
+                                    </div>
+                                </div>
+
+                                <div class="review-right">
+                                    <h3 class="rev-car-name">PRIMO</h3>
+                                    <p class="rev-car-text">総合評価</p>
+                                    <div class="rating-row">
+                                        <span class="stars r45"></span>
+                                        <span class="score">4.5</span>
+                                    </div>
+                                    <div class="raring-breakdown">
+                                        <p>内訳： 品質 [5] / 価格 [4] / 透明性 [5] / スピード [5]</p>
+                                    </div>
+                                </div>
+
+                            </div> <!--review-upper"の終わりタグ-->
+
+                            <div class="review-lower">
+                                <div class="review-text">
+                                    <p>ネットで車を買うのは初めてで不安でしたが、鑑定書が非常に細かく、こちらの懸念点に対してすべて「なぜ大丈夫なのか」を論理的に回答してくれました。特に、将来のリセールバリューを考慮した提案は、他店にはない説得力がありました。契約から納車までアプリで進捗が分かり、無駄なやり取りが一切なかったのも助かりました。</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div> <!--review-list"の終わりタグ-->
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="reason">
+            <div class="reason-wrapper.inner-wrapper">
+
+                <div class="reason-title">
+                    <div class="reason-title-box">
+                        <img src="images/logicar-3.svg" alt="logicarが選ばれる理由" width="290px" height="auto">
+                        <h2>3<span class="sub-1">つの</span><span class="sub-2">理由</span> </h2>
+                    </div>
+                </div>
+
+                <div class="reason-container">
+         
+
+                        <div class="reason-item">
+
+                            <div class="reason-header">
+                                <span class="reason-num">1</span>
+                                <h3 class="reason-header-title">事実をすべて、オープンに。<br> 第三者機関による「車両鑑定書」</h3>
+                            </div>
+
+                            <div class="reason-img">
+                                <img src="images/reason-img-1.jpg">
+                            </div>
+
+                            <div class="reason-text">
+                                <p>ネットでの車選びに、もう不安は必要ありません。
+                                    LOGICARでは、すべての車両に第三者機関による厳しい検査を実施し、鑑定書を公開しています。プロの目で見極めた「傷の状態」から「内装のにおい」まで。良い部分も、そうでない部分もすべてさらけ出すことが、お客様の納得につながると私たちは信じています。</p>
+                            </div>
+                        </div>
+
+                        <div class="reason-item">
+
+                            <div class="reason-header">
+                                <span class="reason-num">2</span>
+                                <h3 class="reason-header-title">未来の収支まで計算する。<br>維持費・リセールを見据えた「価格の透明性」</h3>
+                            </div>
+
+                            <div class="reason-img">
+                                <img src="images/reason-img-2.jpg">
+                            </div>
+
+                            <div class="reason-text">
+                                <p>私たちが提示するのは、単なる「本体価格」ではありません。購入時の支払総額はもちろん、数年後のリセールバリューや月々の維持費まで、論理的にシミュレーション。目先の安さだけでなく手放す時までトータルで「いちばん賢い選択」だったと実感いただける、透明性の高いプライシングを貫きます。</p>
+                            </div>
+                        </div>
+
+
+                        <div class="reason-item">
+
+                            <div class="reason-header">
+                                <span class="reason-num">3</span>
+                                <h3 class="reason-header-title">リスクを最小限に抑える。最長3年・走行距離無制限の「長期保証制度」</h3>
+                            </div>
+
+                            <div class="reason-img">
+                                <img src="images/reason-img-3.jpg">
+                            </div>
+
+                            <div class="reason-text">
+                                <p>中古車購入における最大の懸念である「故障リスク」を徹底的に排除します。LOGICARでは、エンジンやミッションなどの重要機構から電装品に至るまで、
+                                    幅広い項目をカバーする保証をご用意。万が一のトラブルの際も、全国の提携工場で修理対応が可能です。購入後の突発的な出費を抑え、長期的な収支の安定をサポートします。</p>
+                            </div>
+                        </div>
+
+
+
+ 
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="flow">
+            <div class="flow-wrapper.inner-wrapper">
+
+                <div class="flow-title">
+                    <h3 class="flow-title-text">ご購入までの流れ</h3>
+                </div>
+
+                <div class="flow-container">
+
+   
+                <div class="flow-item">
+                    <div class="flow-num">STEP <span class="flow-num-sub">01</span></div>
+                    <div class="flow-card">
+                        <div class="flow-img">
+                            <img src="images/icon-1.svg" alt="イラスト1">
+                        </div>
+                        <h3 class="flow-card-title">条件とリセールで検索</h3>
+                        <p class="flow-card-text">予算だけでなく、「将来いくらで売れるか」
+                            という資産価値も計算して、
+                            損のない1台をを選びます。</p>
+                    </div>
+                </div>
+
+                <div class="flow-arrow"></div>
+
+
+                <div class="flow-item">
+                    <div class="flow-num">STEP <span class="flow-num-sub">02</span></div>
+                    <div class="flow-card">
+                        <div class="flow-img">
+                            <img src="images/icon-2.svg" alt="イラスト2">
+                        </div>
+                        <h3 class="flow-card-title">鑑定書をチェック</h3>
+                        <p class="flow-card-text">プロによる車両状態票（鑑定書）を公開。
+                            ネットでは見えない傷や状態を、
+                            数値と画像で正しく把握します</p>
+                    </div>
+                </div>
+
+                <div class="flow-arrow"></div>
+
+
+                <div class="flow-item">
+                    <div class="flow-num">STEP <span class="flow-num-sub">03</span></div>
+                    <div class="flow-card">
+                        <div class="flow-img">
+                            <img src="images/icon-3.svg" alt="イラスト2">
+                        </div>
+                        <h3 class="flow-card-title">オンラインで納得</h3>
+                        <p class="flow-card-text">プロによる車両状態票（鑑定書）を公開。
+                            ネットでは見えない傷や状態を、
+                            数値と画像で正しく把握します</p>
+                    </div>
+                </div>
+
+
+                <div class="flow-item">
+                    <div class="flow-num">STEP <span class="flow-num-sub">04</span></div>
+                    <div class="flow-card">
+                        <div class="flow-img">
+                            <img src="images/icon-4.svg" alt="イラスト4">
+                        </div>
+                        <h3 class="flow-card-title">ネットで手続き</h3>
+                        <p class="flow-card-text">書類やローンの審査はオンラインで完結。
+                            難しい手続きも、専任スタッフがシンプルに
+                            ガイドします。</p>
+                    </div>
+                </div>
+
+
+                <div class="flow-arrow"></div>
+
+                <div class="flow-item">
+                    <div class="flow-num">STEP <span class="flow-num-sub">05</span></div>
+                    <div class="flow-card">
+                        <div class="flow-img">
+                            <img src="images/icon-5.svg" alt="イラスト5">
+                        </div>
+                        <h3 class="flow-card-title">プロの最終点検</h3>
+                        <p class="flow-card-text">独自の厳しい基準で点検・清掃。
+                            整備した内容はすべてデータとして
+                            お渡しするので、安心です。</p>
+                    </div>
+                </div>
+
+                <div class="flow-arrow"></div>
+
+                <div class="flow-item">
+                    <div class="flow-num">STEP <span class="flow-num-sub">06</span></div>
+                    <div class="flow-card">
+                        <div class="flow-img">
+                            <img src="images/icon-6.svg" alt="イラスト6"width=>
+                        </div>
+                        <h3 class="flow-card-title">ご自宅にお届け</h3>
+                        <p class="flow-card-text">ご希望の場所まで車をお運びします。
+                            長期保証が付帯し、買った後の故障リスクも
+                            しっかりカバーします。</p>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+        </section>
+
+
+        <section class="banner">
+               <div class="banner-wrapper.inner-wrapper">
+
+               </div>
+        </section>
+
+     <section class="corporate-Info">
+         <div class="corporate-wrapper.inner-wrapper">
+
+            <div class="corporate-box">
+
+                <div class="corporate-item">
+                    <h3>車を探す</h3>
+                    <ul class="corporate-li">
+                        <li>ボディタイプから探す</li>
+                          <li>支払い総額から探す</li>
+                          <li>新着車両一覧</li>
+                    </ul>
+                </div>
+
+                     <div class="corporate-item">
+                    <h3>サービスを知る</h3>
+                    <ul class="corporate-li">
+                        <li>LOGICARのこだわり</li>
+                          <li>鑑定・品質評価基準</li>
+                          <li>保証・アフターサポート</li>
+                    </ul>
+                </div>
+
+                   <div class="corporate-item">
+                    <h3>賢い購入ガイド</h3>
+                    <ul class="corporate-li">
+                        <li>リセールの計算方法</li>
+                          <li>失敗しない中古車の選び方</li>
+                          <li>購入シュミレーション</li>
+                    </ul>
+                </div>
+
+                  <div class="corporate-item">
+                    <h3>お問い合わせ</h3>
+                    <ul class="corporate-li">
+                          <li>よくあるご質問</li>
+                          <li>公式ラインで相談</li>
+                        <li>オンライン予約</li>
+                           <li>試乗予約の流れ</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="copyright">
+                <div class="copyright-address">
+                    <h3>株式会社 LOGICAR</h3>
+                    <p>〒271-0000 千葉県松戸市架空町 0-0-0  /  TEL：0120-000-000</p>
+                    <p>古物商許可番号：千葉県公安委員会 第123456789012号</p>
+                </div>
+
+                <div class="copyright-inquiry">
+                    <a href="#">[利用規約] </a>
+                    <a href="#">[プライバシーポリシー] </a>
+                     <a href="#">[特定商法取引法に基づく表記] </a>
+                     <a href="#">[反社会勢力に対する方針] </a>
+                </div>
+            </div>
+
+         </div>
+     </section>
+
+     <footer>
+        <div class="footer-wrapper">
+            <h4>車選びを、人生の確かな資産に。LOGICAR は、あなたの賢い選択に寄り添います。</h4>
+            <p><small>© 2026 LOGICAR はるかのふぉりお All Rights Reserved.</small></p>
+        </div>
+     </footer>
+    
+
+
+
+        <script>
+
+
+document.getElementById('js-hamburger').addEventListener('click', function() {
+    this.classList.toggle('is-active'); // ハンバーガー自体の変形
+    document.querySelector('.header-menu').classList.toggle('is-active'); // メニューの表示
+});
+
+
+     function switchTab(e) {
+    // 1. 全ての .tab-item から active クラスを消す
+    const items = document.querySelectorAll('.tab-item');
+    items.forEach(item => item.classList.remove('active'));
+
+    // 2. クリックされたボタンの親要素 (.tab-item) に active を付ける
+    e.currentTarget.parentElement.classList.add('active');
+}
+
+
+
+        </script>
+</body>

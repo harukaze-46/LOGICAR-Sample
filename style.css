@@ -1,0 +1,966 @@
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+}
+li {
+    list-style: none;
+}
+body {
+    padding-top: 90px;
+}
+a {
+    text-decoration: none;
+}
+.inner-wrapper {
+    width: 1240px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width:768px) {
+    .inner-wrapper {
+      width: 100%;
+    }
+  }
+  /*-------ヘッダー---------*/
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #f9f9f9;
+  }
+
+  .header-wrapper,.header-icon-menu, .menu {
+    display: flex;
+    font-family: "Noto Sans JP", sans-serif;
+  }
+  .header-wrapper {
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px  25px  50px ;
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.2);
+  }
+  .header-icon-menu {
+    align-items: center;
+    gap: 50px;
+  }
+  .menu {
+    margin-top: 15px;
+    gap: 45px;
+  }
+  .menu li a {
+    color: #2d2d2d;
+    white-space: nowrap;
+    position: relative;
+    padding: 5px 0;
+  }
+  .menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.75px;
+    background-color: #1b3a57;
+
+    transform: scaleX(0);
+    transform-origin:  center;
+    transition:  transform 0.3s ease;
+  }
+  .menu li a:hover::after {
+    transform:  scaleX(1);
+  }
+/*-------検索バー---------*/
+  .search_container{
+    box-sizing: border-box;
+    position: relative;
+    padding: 3px 10px;
+    height: 2.3em;
+    width: 260px;
+    overflow: hidden;
+    background: #e6e6e6;
+  }
+  .search_container input[type="text"]{
+    border: none;
+    height: 2.0em;
+    background-color: #e6e6e6;
+  }
+  .search_container input[type="text"]:focus {
+    outline: 0;
+  }
+  .search_container input[type="submit"]{
+    cursor: pointer;
+    font-family: FontAwesome;
+    font-size: 1.3em;
+    border: none;
+    background: transparent;
+    color: #1b3a57;
+    position: absolute;
+    width: 2.5em;
+    height: 2.5em;
+    right: 0;
+    top: -10px;
+    outline : none;
+  }
+  .hamburger {
+    display: none;
+  }
+  /*------fv section-------*/
+  .fv {
+    background: url(./images/fv.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 60vh;
+  }
+  .fv-main-text h1 {
+    font-family: "Shippori Mincho", serif;
+    font-weight: 400;
+    font-style: normal;  
+    color: #f9f9f9;
+    font-size:  38px;
+    line-height: 1.5;
+    text-shadow: 4px 5px 10px rgba(0, 0, 0, 0.21);
+  }
+  .fv-wrapper {
+    position: relative;
+    height: 100%;
+  }
+  .fv-main-text {
+    position: absolute;
+    top: 35%;
+    left: 8%;
+  }
+
+  .fv-button-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    height: 70px;
+    position: absolute;
+    bottom: 3%;
+    left: 8%;
+    z-index: 20;
+  gap: 1px; /* ボタンの間に1pxの隙間を作る */
+  padding: 1px; /* 外枠も線が欲しい場合 */
+  }
+  .fv-button {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    border-radius:  10px  10px 0  0;
+    border: 0.75px solid #1b3a57;
+    transition:  transform 0.3s ease,background-color 0.3s ease,  box-shadow 0.3s ease;
+  }
+  .fv-button:hover {
+    transform: translateY(-5px);
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 30;
+  }
+  .fv-search-btn:hover {
+    background-color: #2a5a88; /* 少し明るくする */
+  }
+  .fv-button:hover h2 {
+    color: #1b3a57; /* 紺色にするなど */
+  }
+.fv-search-btn {
+  background-color: #1b3a57;
+  color: #f9f9f9;
+  flex: 0.8;
+}
+.fv-search-btn h1 {
+  font-weight: normal;
+  font-family: "Noto Sans JP", sans-serif;
+  letter-spacing: 0.2rem;
+}
+.fv-button h2 {
+  font-family: "Noto Sans JP", sans-serif;
+  letter-spacing: 0.2rem;
+  font-size: 1.5rem;
+  color: #2d2d2d;
+  font-weight: normal;
+  align-items: flex-start;
+}
+.fv-button h2 span {
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+/*--------ランキング-----------*/
+.ranking-title {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: normal;
+  margin:  50px  0   0   15px;
+  color: #2d2d2d;
+}
+.ranking-tabs {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  position: relative;
+  margin-top: 20px;
+  min-height: 300px;
+}
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tab-btn {
+  width: 100%;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  background: none;
+  border: none;
+  color: #2d2d2d;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: normal;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.tab-item:hover .tab-btn::after {
+  transform: scaleX(1);     /* ホバーで線を伸ばす */
+}
+.ranking-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 60px;
+  justify-content: space-between;
+  width: 100%;
+  gap: 30px;
+padding-top: 20px;
+}
+.tab-item:not(.active):hover .tab-btn::after {
+  transform: scaleX(0.5); /* 控えめに線を出すなど */
+  opacity: 0.5;
+}
+.tab-item.active .ranking-content {
+  display: flex;
+}
+.tab-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #1b3a57;
+  transform: scaleX(0);      /* 初期状態は長さ0 */
+  transition: transform 0.3s;
+}
+/* ボタンの下線もactive時に出す */
+.tab-item.active .tab-btn::after {
+  transform: scaleX(1);
+}
+.tab-item.active .tab-btn {
+  color: #1b3a57;
+  font-weight: bold;
+}
+.ranking-card {
+  width: 19%; /* 5つ並べるため */
+  text-align: center;
+}
+.image-box {
+  position: relative; /* 順位バッジの基準点 */
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.ranking-card p {
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  color: #2d2d2d;
+}
+.rank-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #cccccc;
+  color: #f9f9f9;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+  border-bottom-left-radius: 8px; /* 内側だけ角丸にするとオシャレ */
+}
+.ranking-card:nth-child(1) .rank-badge { background: #e6b422; } /* 金 */
+.ranking-card:nth-child(2) .rank-badge { background: #b4b4b4; } /* 銀 */
+.ranking-card:nth-child(3) .rank-badge { background: #ad8a5e; } /* 銅 */
+
+/*--------車を探す-----------*/
+.car-search {
+  margin-top: 50px;
+}
+.car-search-container {
+  margin-bottom: 80px;
+}
+.car-search-title,.car-seach-subtitle {
+  text-align: center;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: normal;
+}
+.car-search-title {
+  position: relative;
+  font-size: 30px;
+  color: #2d2d2d;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: normal;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+}
+.car-search-title::after {
+  content: "";
+  position: absolute; 
+  bottom: 0;       
+  left: 50%; 
+  width: 130px;  
+  transform: translateX(-50%);   
+  height: 2px;        
+  background-color: #1b3a57; 
+}
+.car-seach-subtitle {
+  margin-bottom: 30px;
+  color: #2d2d2d;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: normal;
+}
+.csr-selection-box {
+  border: 0.5px solid #1b3a57;
+  padding: 40px;
+  width: 1200px;
+  height: auto;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+.car-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 20px;
+  margin-bottom: 0;
+}
+.car-item {
+  width: calc((100% - 60px) / 4);
+  text-align: center;
+}
+.car-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin-bottom: 10px;
+}
+.car-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.car-info p {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #2d2d2d;
+  font-family: "Montserrat", sans-serif;
+}
+
+.car-all-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1200px;
+  height: 60px;
+  margin: 0 auto;
+  background-color: #1b3a57;
+  color: #fff;
+  padding: 10px;
+  font-family: "Noto Sans JP", sans-serif;
+  letter-spacing: 0.2rem;
+  font-size: 25px;
+  transition: 0.3s;
+}
+.car-all-link:hover {
+  background-color: #2a5a88;
+  opacity: 0.9;
+}
+
+/*--------　価格から探す　-----------*/
+.car-money-wrapper {
+  width: 1200px;
+  padding: 30px;
+  margin: 0 auto;
+  background-color: #f2f2f2;
+  margin-bottom: 100px;
+}
+.car-money-wrapper-secand {
+  width: 1200px;
+  padding: 30px 30px 0 30px;
+  margin: 0 auto;
+  background-color: #f2f2f2;
+}
+.car-money-title,.car-money-sub-title h3 {
+  text-align: center;
+  font-weight: normal;
+  letter-spacing: 0.1rem;
+  padding-bottom: 20px;
+  color: #2d2d2d;
+  font-family: "Noto Sans JP", sans-serif;
+}
+.car-money-sub-title p {
+  text-align: center;
+  font-weight: normal;
+  color: #2d2d2d;
+  letter-spacing: 0.1rem;
+  font-family: "Noto Sans JP", sans-serif;
+  margin-bottom: 30px;
+}
+.car-meney-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.car-meney-list-secand {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.car-meney-item {
+  padding: 20px 10px;
+  background-color: #fdfefe;
+  border: 0.5px solid #1b3a57;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.car-meney-item:hover {
+  background-color: #f0f7ff;
+  box-shadow: 0px 4px 15px 0px rgba(27, 58, 87, 0.3);
+  transform: translateY(-3px);
+}
+.car-meney-item:active {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(27, 58, 87, 0.1);
+}
+.car-meney {
+  color: #2d2d2d;
+  font-size: 1.7rem;
+}
+.car-meney span {
+  padding-left: 3px;
+  font-size: 0.9rem;
+}
+.car-money-container-secand {
+  margin-top: 50px;
+}
+.car-meney-title-box {
+  text-align: center;
+}
+
+.money-sub-text {
+  display: flex;
+  justify-content: right;
+  padding: 30px 0 5px 0;
+}
+.money-sub-text {
+  font-size: 0.9rem;
+  color: #2d2d2d;
+}
+
+/*--------　レビュー　-----------*/
+
+.review {
+  padding: 100px 0;
+  width: 1300px;
+  margin: 0 auto;
+}
+.review-title {
+  font-size: 1.8rem;
+  color: #2d2d2d;
+  font-weight: normal;
+  letter-spacing: 0.1rem;
+  font-family: "Noto Sans JP", sans-serif;
+  text-align: center;
+}
+.review-list {
+  display: flex;
+  margin-top: 15px;
+}
+.review-card {
+  border: 0.5px solid #1b3a57;
+  padding: 15px;
+}
+.review-upper {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+.review-left {
+  width: 200px;
+  text-align: center;
+}
+.rev-uset-info {
+  display: flex;
+  gap: 20px;
+  font-size: 0.8rem;
+  justify-content: center;
+}
+.rev-car-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin-bottom: 10px;
+}
+.rev-car-img img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+.review-right {
+  flex: 1;
+}
+.rev-car-name {
+  font-size: 1.5rem;
+  color: #1b3a57;;
+  font-family: "Montserrat", sans-serif;
+  padding-top: 10px;
+}
+.rev-car-text {
+  font-size: 0.6rem;
+  padding: 10px 0;
+}
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.raring-breakdown {
+  font-size: 0.5em;
+}
+
+
+.review-lower {
+  border-top: 1px solid #eee; /* 🚩 下側の境界線 */
+  padding-top: 20px;
+}
+
+.review-text {
+  line-height: 1.8;
+  color: #333;
+  font-size: 0.8rem;
+}
+
+/*-------スターのcss--------*/
+.stars {
+  position: relative;
+  display: inline-block;
+  font-size: 1.2rem;
+  color: #c0c0c0;
+  font-family: "serif";
+  letter-spacing: 2px;
+}
+.stars::after {
+  content: "★★★★★";
+}
+.stars::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #d0a900;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/*----点数ごとの幅の指定---*/
+.stars.r5::before{ content: "★★★★★"; width: 100%;;}
+.stars.r45::before{ content: "★★★★★"; width: 90%;;}
+.stars.r4::before{content: "★★★★★"; width: 80%;;}
+
+
+/*----タイトル---*/
+.reason {
+  margin-bottom: 50px;
+}
+.reason-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.reason-title-box h2 {
+  font-size: 5rem;
+  font-weight: normal;
+  color: #1b3a57;
+  font-family: "Noto Sans JP", sans-serif;
+  letter-spacing: 0.5rem;
+}
+.sub-1 {
+  font-size: 3rem;
+}
+
+/*----「logicarが選ばれる理由」のcss---*/
+.reason-container {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.reason-item {
+  flex: 1;
+  background-color: #fff;
+  box-shadow: 20px 5px 10px -10px rgba(0, 18, 32, 0.3);
+}
+.reason-header {
+  background-color: #1b3a57;
+  color: #e6e6e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100px;
+}
+.reason-num{
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding:  0   20px;
+  margin-right: 10px;
+}
+.reason-header-title {
+  font-weight: normal;
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+.reason-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+.reason-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.reason-text {
+  padding: 25px 20px;
+  flex-grow: 1;
+}
+.reason-text  p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #2d2d2d;
+}
+
+/*--------ご購入の流れ---------*/
+.flow-title {
+  text-align: center;
+  margin: 100px 0 50px 0;
+}
+.flow-title-text {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.9rem;
+  font-weight: normal;
+  color: #2d2d2d;
+}
+.flow-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+.flow-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  row-gap: 60px;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+.flow-item {
+  position: relative;
+  width: calc((100% - 100px) / 3);
+  display: flex;
+  flex-direction: column;
+}
+.flow-num {
+  background: linear-gradient(135deg, #1b3a57 0%, #2a5a88 100%);
+  position: absolute;
+  top: -18px;
+  left: 25%;
+  background-color: #1b3a57;
+  color: #e6e6e6;
+  padding: 6px 25px ;
+  border-radius: 30px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  z-index: 2;
+  font-family: "Montserrat", sans-serif;
+}
+.flow-card {
+  border: 1px solid #1b3a57;
+  box-shadow: 10px 3px 15px 0px rgba(102, 102, 102, 0.1);
+  padding: 50px 25px 30px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.flow-arrow {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.flow-arrow::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 0 12px 18px;
+  border-color: transparent transparent transparent #1b3a57;
+}
+.flow-img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flow-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.flow-card-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #1b3a57;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+.flow-card-text {
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: #444;
+  text-align: left; /* 🚩 説明文は左寄せの方が見やすいです */
+  flex-grow: 1;
+}
+
+/*--------バナーエリア---------*/
+.banner {
+  padding: 300px 0;
+  border: 1px solid;
+}
+
+/*--------会社情報---------*/
+.corporate-Info {
+  background-color: #496179;
+  color: #e6e6e6;
+  padding: 50px 0  10px 50px;
+}
+.corporate-box {
+  display: flex;
+  gap: 80px;
+  padding-bottom: 30px;
+}
+.corporate-item h3 {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: normal;
+  padding-bottom: 10px;
+}
+.corporate-item ul li {
+  font-size: 15px;
+  padding-bottom: 5px;
+}
+
+.copyright-address {
+  padding-bottom: 10px;
+}
+.copyright-address h3 {
+  padding-bottom: 5px;
+}
+.copyright-inquiry {
+  display: flex;
+  gap: 20px;
+}
+.copyright-inquiry a{
+  color: #e6e6e6;
+  font-size: 0.85rem;
+  position: relative;
+  padding-bottom: 2px;
+  transform:  color 0.3s ease;
+}
+.copyright-inquiry a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: #e6e6e6;
+  transition: width 0.3s ease;
+}
+.copyright-inquiry a:hover::after {
+  width: 100%;
+}
+/*--------フッター---------*/
+footer {
+  background-color: #1b3a57;
+  color: #e6e6e6;
+  padding: 10px;
+}
+.footer-wrapper  {
+  text-align: center;
+}
+.footer-wrapper h4{
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: normal;
+  padding-bottom: 5px;
+}
+
+
+
+    /*------ヘッダー部分のスマホ用レイアウト-------*/
+    @media screen and (max-width:768px) {
+      .header-wrapper {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        }
+        .header-icon-menu {
+          width: 100%;
+          justify-content: space-between;
+          gap: 0;
+        }
+        .header-menu {
+          display: block;
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 80%;
+          height: 400px;
+          background-color: #f9f9f9;
+          transition:  all 0.5s;
+          z-index: 1000;
+          padding-top: 80px;
+        }
+        /* 🚩 開いた時の位置 */
+      .header-menu.is-active {
+        right: 0;
+      }
+    .header-menu .menu {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      margin: 0;
+    }
+    .header-menu .menu  li  {
+      border-bottom: 1px solid #ddd;
+    }
+    .header-menu .menu  li  a{
+      display: block;
+      padding: 20px;
+      color: #333;
+    }
+      .menu-list {
+        flex-direction: column; /* 縦並びに */
+        padding: 0 40px;
+      }
+        .search_container{
+          width: 100%;
+          margin-top: 15px;
+          display: flex;
+        }
+        .search_container input[type="text"]{
+          width: 100%;
+        }
+        .rogo-Logicar {
+          width: 120px;
+        }
+        .hamburger {
+          display: block;
+          position: relative;
+          width: 30px;
+          height: 24px;
+          cursor: pointer;
+          z-index: 1001;
+        }
+        .hamburger span {
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: #1b3a57;
+          transition:  all 0.4s;
+        }
+        .hamburger span:nth-child(1) { top: 0;}
+        .hamburger span:nth-child(2) { top: 11px;}
+        .hamburger span:nth-child(3) { bottom: 0;}
+    
+        .hamburger.is-active span:nth-child(1) { transform: translateY(11px) rotate(45deg); }
+      .hamburger.is-active span:nth-child(2) { opacity: 0; }
+      .hamburger.is-active span:nth-child(3) { transform: translateY(-11px) rotate(-45deg); }
+      }
+
+          /*------fvのスマホ用レイアウト-------*/
+          @media screen and (max-width:768px) {
+            .fv {
+              background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(./images/fv.jpg);
+    background-position: 80% center; 
+    width: 100%;
+    height: 80vh;
+            }
+            .fv-main-text {
+              top: 7%;
+              left: 5%;
+              width: 90%;
+            }
+            .fv-main-text h1 {
+              font-size: 20px;
+              line-height: 1.4;
+            }
+            .fv-button-wrapper {
+              left: 5%;
+              width: 90%;
+              bottom: 5%;
+              height: auto;
+              display: grid;
+              grid-template-columns: 1fr 1fr; /* 2列にする */
+    gap: 10px;
+            }
+            .fv-button { 
+              height: 60px;
+              gap: 10px;
+              border-radius: 5px;
+              padding: 10px;
+            }
+            .fv-button h2 {
+              font-size: 1rem;
+            }
+            .fv-button h2 span {
+              display: none; /* 「から選ぶ」を消してスッキリさせる */
+            }
+            .fv-search-btn h1  {
+              font-size: 1.2rem;
+            }
+            .fv-icon {
+              width: 25px;
+            }
+            .fv-search-btn {
+              grid-column: 1/3;
+              flex: none;
+              height: 50px;
+              margin-top: 5px;
+            }
+          }
