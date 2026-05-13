@@ -759,10 +759,17 @@ padding-top: 20px;
 
 /*--------バナーエリア---------*/
 .banner {
-  padding: 300px 0;
-  border: 1px solid;
+  padding: 100px 0;
+  text-align: center;
 }
-
+.banner-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.banner-inner  img {
+  width: 60%;
+}
 /*--------会社情報---------*/
 .corporate-Info {
   background-color: #496179;
@@ -1267,5 +1274,8 @@ footer {
   .footer-wrapper h4{
     font-size: 0.95rem;
     line-height: 1.7;
+  }
+  .banner-inner  img {
+    width: 100%;
   }
 }
